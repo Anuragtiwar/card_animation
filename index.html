@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .rmCard {
+        transition: all 0.4s;
+        transform: scale(0);
+        opacity: 0 !important;
+    }
+
+    .card {
+        overflow: hidden;
+        width: 300px;
+        height: 390px;
+        background: url(background.jpg) no-repeat;
+        background-size: cover;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        opacity: 0.8;
+
+    }
+
+    .wrapper {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        scale: 1.5;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        transition: all 0.5s;
+    }
+
+    .wrapper:hover {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    button {
+        width: 80px;
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.418);
+        backdrop-filter: blur(20px);
+        transition: all 0.3s;
+        color: white;
+        box-shadow: 0px 0px 11px 2px black;
+}
+
+
+    button:hover {
+        transform: scale(1.2);
+    }
+
+    button:active {
+        transform: scale(0.8);
+    }
+
+    .para {
+        text-align: justify;
+        color: aliceblue;
+        font-size: 20px;
+    }
+
+    .container {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(334px, 12px));
+    }
+
+    .heading {
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    span {
+        color: rgb(0, 156, 218);
+        font-size: 55px;
+    }
+
+    #reloadbtn {
+        width: 150px;
+        height: 40px;
+        background-color: rgb(0, 156, 218);
+        box-shadow: 4px 3px 4px 0px rgb(1, 102, 145);;
+        border-radius: 30px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        opacity: 1;
+        scale: 1;
+        transition: all 0.2s ease-out;
+    }
+
+    #reloadbtn:active {
+        transform: scale(0.7);
+    }
+
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <h1><span>CARD</span> <br>HOVER <br> <span>ANIMATION</span></h1>
+            <div id="reloadbtn" onclick="reloadPage()">Retrieve Now!</div>
+        </div>
+
+        <div class="card" id="card1">
+            <div class="wrapper">
+                <div class="btn">
+                    <button>Save</button>
+                    <button onclick="rmCard1()">Delete</button>
+                </div>
+                <div class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae illum quidem,Lorem
+                    ipsum dolor sit, amet consectetur adipisicing elit. helol lasdf,lksdksl</div>
+            </div>
+        </div>
+
+        <div class="card" id="card2">
+            <div class="wrapper">
+                <div class="btn">
+                    <button>Save</button>
+                    <button onclick="rmCard2()">Delete</button>
+                </div>
+                <div class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae illum quidem,Lorem
+                    ipsum dolor sit, amet consectetur adipisicing elit. helol lasdf,lksdksl</div>
+            </div>
+        </div>
+
+        <div class="card" id="card3">
+            <div class="wrapper">
+                <div class="btn">
+                    <button>Save</button>
+                    <button onclick="rmCard3()">Delete</button>
+                </div>
+                <div class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae illum quidem,Lorem
+                    ipsum dolor sit, amet consectetur adipisicing elit. helol lasdf,lksdksl</div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let reloadbtn = document.getElementById("reloadbtn");
+        function rmCard1() {
+            let card1 = document.getElementById("card1");
+            card1.classList.add("rmCard");
+            reloadbtn.style.opacity="1";
+            reloadbtn.style.scale="1";
+        }
+        function rmCard2() {
+            let card2 = document.getElementById("card2");
+            card2.classList.add("rmCard");
+            reloadbtn.style.opacity="1";
+            reloadbtn.style.scale="1";
+        }
+
+        function rmCard3() {
+            let card3 = document.getElementById("card3");
+            card3.classList.add("rmCard");
+            reloadbtn.style.opacity="1";
+            reloadbtn.style.scale="1";
+        }
+
+        function reloadPage() {
+            location.reload();
+         }
+    </script>
+
+</body>
+
+</html>
